@@ -48,9 +48,13 @@ type MySQLConfig struct {
 	// Optional.
 	Username, Password string
 
-	// Required.
 	Host string
 	Port int
+
+	// The connection name of the Cloud SQL v2 instance, i.e.,
+	// "project:region:instance-id"
+	// Cloud SQL v1 instances are not supported.
+	CloudConnectionName string
 }
 
 // dataStoreName returns a connection string suitable for sql.Open.
